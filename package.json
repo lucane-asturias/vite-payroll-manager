@@ -1,0 +1,39 @@
+{
+  "name": "vite-payroll-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest --environment jsdom --ui"
+  },
+  "dependencies": {
+    "@vee-validate/i18n": "^4.5.7",
+    "@vee-validate/rules": "^4.5.7",
+    "core-js": "^3.6.5",
+    "firebase": "^8.10.0",
+    "nprogress": "^0.2.0",
+    "semantic-ui-css": "^2.5.0",
+    "vee-validate": "^4.5.7",
+    "vue": "^3.2.37",
+    "vue-i18n": "^9.1.0",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^7.0.0",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitest/ui": "^0.29.3",
+    "@vue/test-utils": "^2.3.1",
+    "autoprefixer": "^9.8.8",
+    "jsdom": "^21.1.1",
+    "path": "^0.12.7",
+    "sass": "^1.35.2",
+    "sass-loader": "10",
+    "tailwindcss": "^3.2.4",
+    "typescript": "~3.9.3",
+    "vite": "^3.0.7",
+    "vitest": "^0.29.3"
+  }
+}
