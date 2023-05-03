@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "already_registered": "¿Ya se ha registrado?",
+    "create_account": "Inicie la sesión",
+    "instead": "en su lugar!",
+    "login": "Iniciar sesión",
+    "no_account": "¿Aún no tienes cuenta?",
+    "register": "Crea una cuenta",
+    "welcome": "Bienvenido!"
+  },
+  "language": {
+    "en": "Inglés",
+    "es": "Español",
+    "ja": "Japonés",
+    "pt": "Portugués",
+    "zh": "Chino"
+  },
+  "login": {
+    "email": "Email",
+    "enter_email": "Enter Email",
+    "password": "Contraseña",
+    "submit": "Entrar"
+  },
+  "navbar": {
+    "hello": "Hola",
+    "logout": "Logout",
+    "payrolls": "Nominas",
+    "select_language": "Seleccione su idioma"
+  },
+  "register": {
+    "accept": "Acepto las {0}",
+    "age": "Edad",
+    "confirm_password": "Repetir contraseña",
+    "email": "Correo electronico",
+    "enter_age": "Su edad",
+    "enter_email": "Enter Email",
+    "enter_name": "Enter nombre",
+    "language": "Idioma",
+    "name": "Nombre",
+    "password": "Contraseña",
+    "submit": "Registrar",
+    "TOS": "condiciones de uso de la música."
+  },
+  "account": {
+    "welcome": "Bienvenido a los ajustes",
+    "change_name": "Cambiar nombre",
+    "change_email": "Cambiar email",
+    "change_password": "Cambiar contraseña"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "already_registered": "Já se cadastrou?",
+    "create_account": "Faça o login",
+    "instead": "em vez disso!",
+    "login": "Entrar em minha conta",
+    "no_account": "Ainda não tem uma conta?",
+    "register": "Crie uma conta",
+    "welcome": "Bem-vindo!"
+  },
+  "language": {
+    "en": "Inglês",
+    "es": "Espanhol",
+    "ja": "Japonês",
+    "pt": "Português",
+    "zh": "Chinês"
+  },
+  "login": {
+    "email": "Email",
+    "enter_email": "Entrar Email",
+    "password": "Senha",
+    "submit": "Entrar"
+  },
+  "navbar": {
+    "hello": "Olá",
+    "logout": "Logout",
+    "payrolls": "Folhas de pagamento",
+    "select_language": "Selecione o idioma"
+  },
+  "register": {
+    "accept": "Eu aceito {0}",
+    "age": "Idade",
+    "confirm_password": "Repita a senha",
+    "email": "Email",
+    "enter_age": "Digite a idade",
+    "enter_email": "Digite o email",
+    "enter_name": "Digite seu nome",
+    "language": "Idioma",
+    "name": "Nome",
+    "password": "Senha",
+    "submit": "Registrar",
+    "TOS": "termos de serviço."
+  },
+  "account": {
+    "welcome": "Bem vindo aos ajustes",
+    "change_name": "Mudar nome",
+    "change_email": "Mudar email",
+    "change_password": "Mudar senha"
+  }
+}

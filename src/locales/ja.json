@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "already_registered": "すでに登録されている方は",
+    "create_account": "アカウント作成",
+    "instead": "こちら！",
+    "login": "ログイン",
+    "no_account":"アカウントをお持ちでない方は",
+    "register": "メールアドレスで登録",
+    "welcome": "ようこそ！"
+  },
+  "language": {
+    "en": "英語",
+    "es": "スペイン語",
+    "ja": "日本語",
+    "pt": "ポルトガル語",
+    "zh": "中国語"
+  },
+  "login": {
+    "email": "メール",
+    "enter_email": "メールアドレス",
+    "password": "パスワード",
+    "submit": "ログイン"
+  },
+  "navbar": {
+    "hello": "どうも",
+    "logout": "ログアウト",
+    "payrolls": "ペイロール (給与計算)",
+    "select_language": "言語を選択してください"
+  },
+  "register": {
+    "accept": "ペイロールの{0}",
+    "age": "年齢",
+    "confirm_password": "パスワードの確認",
+    "email": "メール",
+    "enter_age": "年齢を入力してください",
+    "enter_email": "メールアドレス",
+    "enter_name": "名前を入力してください",
+    "language": "言語",
+    "name": "名前",
+    "password": "パスワード",
+    "submit": "登録する",
+    "TOS": "利用規約に同意します"
+  },
+  "account": {
+    "welcome": "ようこそ、セッティングへ",
+    "change_name": "名前を変更する",
+    "change_email": "メールを変更する",
+    "change_password": "パスワードを変更する"
+  }
+}

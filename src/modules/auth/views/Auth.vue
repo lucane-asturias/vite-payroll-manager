@@ -1,69 +1,66 @@
+<script setup>
+  import { reactive, defineAsyncComponent } from 'vue'
+  import { useAuthStore } from '../store/authStore'
+  import { useAuth } from '../composables/useAuth'
+
+  import BasicLayout from '@/layouts/BasicLayout.vue'
+
+  const LoginForm = defineAsyncComponent(() => import('../components/LoginForm.vue'))
+  const RegisterForm = defineAsyncComponent(() => import('../components/RegisterForm.vue'))
+
+  const { changeForm, toggleAuth } = reactive(useAuth())
+</script>
+
 <template>
   <BasicLayout>
-    <div class="flex justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-      <p>Welcome</p>
+    <div class="auth text-center text-white">
 
-      <div v-if="showLogin">
-        <h2>Login</h2>
-        <login-form />
+      <div v-if="changeForm" class="w-80 mt-4">
 
-        <p>No account yet? 
-          <span class="pointer fw-bold" @click="toggleAuth">
-            Register
-          </span> instead
-        </p>
+        <h2 class="tracking-wide">{{ $t('auth.create_account') }}</h2>
+        <RegisterForm />
+
+        <h4 class="font-thin">{{ $t('already_registered') }} 
+          <span class="cursor-pointer underline font-bold text-gray-300 hover:text-gray-400" @click="toggleAuth">
+            {{ $t('auth.login') }}
+          </span> {{ $t('auth.instead') }}
+        </h4>
       </div>
 
-      <div v-else>
-        <h2>Register</h2>
-        <register-form />
+      <div v-else class="w-80 -mt-10">
+        <h4 class="tracking-wider">{{ $t('auth.welcome') }}</h4>
+        <h2 class="tracking-wide">{{ $t('auth.login') }}</h2>
+        <LoginForm />
 
-        <p>Already registered? 
-          <span class="pointer fw-bold" @click="toggleAuth">
-            Login
-          </span> instead
-        </p>
+        <h4 class="font-thin">{{ $t('auth.no_account') }}
+          <span class="cursor-pointer underline font-bold text-gray-300 hover:text-gray-400" @click="toggleAuth">
+            {{ $t('auth.register') }}
+          </span> {{ $t('auth.instead') }}
+        </h4>
       </div>
 
     </div>
   </BasicLayout>
 </template>
 
-<script setup>
-  import { defineAsyncComponent, ref } from 'vue'
-  import { useRouter } from 'vue-router'
+<style lang="css" scoped>
 
-  import { useAuthStore } from '@/modules/auth/store/authStore'
-  import BasicLayout from '@/layouts/BasicLayout.vue'
-
-  const authStore = useAuthStore()
-  const router = useRouter()
-
-  // async auth components
-  const LoginForm = defineAsyncComponent(() => import('../components/LoginForm.vue'))
-  const RegisterForm = defineAsyncComponent(() => import('../components/RegisterForm.vue'))
-
-  // auth store
-  const toggleAuth = () => authStore.toggleAuth()
-
-</script>
-
-<style lang="scss" scoped>
-// .auth {
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   background: rgb(4, 78, 157);
-//   background: linear-gradient(
-//     0deg,
-//     rgba(4, 78, 157, 1) 0%,
-//     rgba(0, 174, 255, 1) 100%
-//   );
-// }
+.auth {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(4, 78, 157);
+  background: linear-gradient(
+    0deg,
+    rgba(4, 78, 157, 1) 0%,
+    rgba(0, 174, 255, 1) 100%
+  );
+}
 
 span:hover {
   opacity: 0.6;
 }
+
 </style>

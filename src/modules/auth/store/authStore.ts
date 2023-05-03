@@ -1,14 +1,20 @@
 import { defineStore } from 'pinia'
-import { auth, usersCollection } from '@/includes/firebase'
+import { useRouter } from 'vue-router'
+import { auth, usersCollection } from '@/utils/firebase'
+import { reauthenticate } from '@/utils/firebaseFunctions'
 
 export const useAuthStore = defineStore('authStore', {
   state: () => ({
     user: undefined,
-    changeAuth: false
+    isUserLoggedIn: false,
+    changeForm: false,
   }),
   actions: {
+    toggleUser() {
+      this.isUserLoggedIn = !this.isUserLoggedIn
+    },
     toggleAuth() {
-      this.changeAuth = !this.changeAuth
+      this.changeForm = !this.changeForm
     },
     setUser(user) {
       this.user = user
@@ -22,7 +28,7 @@ export const useAuthStore = defineStore('authStore', {
         name: payload.name,
         email: payload.email,
         age: payload.age,
-        country: payload.country
+        language: payload.language
       })
 
       await userCred.user.updateProfile({ 
@@ -30,23 +36,48 @@ export const useAuthStore = defineStore('authStore', {
         displayName: payload.name
       })
 
-      this.toggleAuth()
+      setTimeout(() => {
+        this.toggleAuth()
+      }, 3000)
     },
     async loginUser(payload) {
       // send request to firebase with the payload data
-      await auth.signInWithEmailAndPassword(payload.email, payload.password);
-      
-      this.toggleAuth()
+      const userCred = await auth.signInWithEmailAndPassword(payload.email, payload.password)
+
+      this.setUser(userCred.user)
+      this.toggleUser()
     },
     initLogin() {
-      const user = auth.currentUser; // get the curent user connected 
-      if (user) this.toggleAuth()
+      const user = auth.currentUser // get the curent user connected 
+      if (user) { 
+        this.setUser(user)
+        this.toggleUser()
+      }
+    },
+    async updateName(newName) {
+      await auth.currentUser.updateProfile({ displayName: newName })
+      this.reloadUserName() // reflect auth changes in the state
+    },
+    async updateEmail(email, password) {
+      await reauthenticate(password)
+      await auth.currentUser.updateEmail(email)
+      await this.signOut()
+    },
+    async updatePassword(password, newPassword) {
+      await reauthenticate(password)
+      await auth.currentUser.updatePassword(newPassword)
+      await this.signOut()
+    },
+    reloadUserName() {
+      auth.onAuthStateChanged((user) => {
+        const { displayName } = user
+        this.setUser({ ...this.user, displayName })
+      })
     },
     async signOut() {
-      // signing user out from firebase
-      await auth.signOut()
+      await auth.signOut() // signing user out from firebase
 
-      this.toggleAuth()
+      this.toggleUser()
     }
   }
 })

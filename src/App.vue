@@ -1,7 +1,19 @@
-<template>
-  <!-- <app-header /> -->
+<script setup>
+  import { onMounted, computed } from "vue"
+  import { auth } from '@/utils/firebase'
+  import { useAuthStore } from "@/modules/auth/store/authStore"
+  import AppAuth from "@/modules/auth/views/Auth.vue"
 
-  <template v-if="user">
+  const authStore = useAuthStore()
+
+  const isUserLoggedIn = computed(() => authStore.isUserLoggedIn)
+
+  onMounted(() => authStore.initLogin())
+</script>
+
+<template>
+
+  <template v-if="isUserLoggedIn">
     <!-- will be replaced and loaded with the correct component based on route records -->
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
@@ -11,25 +23,9 @@
     </router-view>
   </template>
 
-  <app-auth v-if="!user && user !== undefined" />
-
-</template>
-
-<script setup>
-  import { onMounted, computed } from 'vue'
-  import { useAuthStore } from '@/modules/auth/store/authStore'
+  <app-auth v-else />
   
-  import AppHeader from '@/components/Header.vue'
-  import AppAuth from '@/modules/auth/views/Auth.vue'
-  import AppPlayer from '@/views/Player.vue'
-
-  const authStore = useAuthStore()
-
-  // onMounted(() => authStore.initLogin())
-
-  onMounted(() => auth.onAuthStateChanged(user => authStore.setUser(user)))
-
-</script>
+</template>
 
 <style>
   /*  gets added when the element is entering the page */

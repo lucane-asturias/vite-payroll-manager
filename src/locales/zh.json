@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "already_registered": "已经注册了吗？",
+    "create_account": "创建一个帐户",
+    "instead": "而是！",
+    "login": "注册",
+    "no_account": "还没有账户吗？",
+    "register": "登录",
+    "welcome": "欢迎!!"
+  },
+  "language": {
+    "en": "英语",
+    "es": "西班牙语",
+    "ja": "日本语",
+    "pt": "葡语",
+    "zh": "中文"
+  },
+  "login": {
+    "email": "电子邮件",
+    "enter_email": "输入电子邮件",
+    "password": "密码",
+    "submit": "提交"
+  },
+  "navbar": {
+    "hello": "你好",
+    "logout": "登出",
+    "payrolls": "Payrolls",
+    "select_language": "选择你的语言"
+  },
+  "register": {
+    "accept": "我接受Payroll的{0}",
+    "age": "Age",
+    "confirm_password": "确认密码",
+    "email": "电子邮件",
+    "enter_age": "输入你的年龄",
+    "enter_email": "输入电子邮件",
+    "enter_name": "输入名称",
+    "language": "语言",
+    "name": "名称",
+    "password": "密码",
+    "submit": "提交",
+    "TOS": "服务条款"
+  },
+  "account": {
+    "welcome": "欢迎设置",
+    "change_name": "更改名称",
+    "change_email": "更改电子邮件",
+    "change_password": "更改密码"
+  }
+}

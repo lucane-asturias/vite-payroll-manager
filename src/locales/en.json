@@ -1,0 +1,50 @@
+{
+  "auth": {
+    "already_registered": "Already registered?",
+    "create_account": "Create an account",
+    "instead": "instead!",
+    "login": "Login",
+    "no_account": "No account yet?",
+    "register": "Register",
+    "welcome": "Welcome!"
+  },
+  "language": {
+    "en": "English",
+    "es": "Spanish",
+    "ja": "Japanese",
+    "pt": "Portuguese",
+    "zh": "Chinese"
+  },
+  "login": {
+    "email": "Email",
+    "enter_email": "Enter Email",
+    "password": "Password",
+    "submit": "Submit"
+  },
+  "navbar": {
+    "hello": "Hello",
+    "logout": "Logout",
+    "payrolls": "Payrolls",
+    "select_language": "Select your Language"
+  },
+  "register": {
+    "accept": "I accept Payroll's {0}",
+    "age": "Age",
+    "confirm_password": "Confirm Password",
+    "email": "Email",
+    "enter_age": "Enter your age",
+    "enter_email": "Enter Email",
+    "enter_name": "Enter Name",
+    "language": "Language",
+    "name": "Name",
+    "password": "Password",
+    "submit": "Submit",
+    "TOS": "Terms of Service."
+  },
+  "account": {
+    "welcome": "Welcome to the settings",
+    "change_name": "Change Name",
+    "change_email": "Change Email",
+    "change_password": "Change Password"
+  }
+}

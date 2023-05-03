@@ -1,18 +1,16 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
-
-// lazy load: dynamically load component when its needed, which will generate a chunk file
-const Home = () => import('@/views/Home.vue')
-const Account = () => import('@/modules/views/Account.vue')
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import Payrolls from '../views/Payrolls.vue'
+import Account from '@/modules/account/views/Account.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "Home",
-    component: Home,
+    path: '/',
+    name: 'Payrolls',
+    component: Payrolls,
   },
   {
-    path: "/account",
-    name: "Account",
+    path: '/account',
+    name: 'Account',
     component: Account
   }
 ]
