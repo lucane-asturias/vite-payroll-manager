@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Payrolls from '../views/Payrolls.vue'
+import Payrolls from '@/modules/payroll/views/Payrolls.vue'
 import Account from '@/modules/account/views/Account.vue'
 
 const routes: Array<RouteRecordRaw> = [

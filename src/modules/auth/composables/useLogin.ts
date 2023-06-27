@@ -69,6 +69,7 @@ export const useLogin = () => {
     }
     
     // window.location.reload()
+    authStore.toggleBg()
 
     setTimeout(() => {
       login_in_submission.value = false

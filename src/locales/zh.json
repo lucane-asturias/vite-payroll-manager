@@ -1,4 +1,10 @@
 {
+  "account": {
+    "welcome": "欢迎设置",
+    "change_name": "更改名称",
+    "change_email": "更改电子邮件",
+    "change_password": "更改密码"
+  },
   "auth": {
     "already_registered": "已经注册了吗？",
     "create_account": "创建一个帐户",
@@ -24,11 +30,19 @@
   "navbar": {
     "hello": "你好",
     "logout": "登出",
-    "payrolls": "Payrolls",
+    "payrolls": "工资单",
     "select_language": "选择你的语言"
   },
+  "payrolls": {
+    "my_payrolls": "我的工资单"
+  },
+  "payrollList": {
+    "no_payrolls": "没有工资单，送第一份。",
+    "download": "下载工资单",
+    "delete": "删除"
+  },
   "register": {
-    "accept": "我接受Payroll的{0}",
+    "accept": "我接受工资单的{0}",
     "age": "Age",
     "confirm_password": "确认密码",
     "email": "电子邮件",
@@ -41,10 +55,9 @@
     "submit": "提交",
     "TOS": "服务条款"
   },
-  "account": {
-    "welcome": "欢迎设置",
-    "change_name": "更改名称",
-    "change_email": "更改电子邮件",
-    "change_password": "更改密码"
+  "uploadPayroll": {
+    "new_payroll": "新的工资单",
+    "select_payroll": "选择工资单",
+    "upload_payroll": "上传工资单"
   }
 }

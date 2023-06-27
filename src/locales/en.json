@@ -1,4 +1,10 @@
 {
+  "account": {
+    "welcome": "Welcome to the settings",
+    "change_name": "Change Name",
+    "change_email": "Change Email",
+    "change_password": "Change Password"
+  },
   "auth": {
     "already_registered": "Already registered?",
     "create_account": "Create an account",
@@ -27,6 +33,14 @@
     "payrolls": "Payrolls",
     "select_language": "Select your Language"
   },
+  "payrolls": {
+    "my_payrolls": "My payrolls"
+  },
+  "payrollList": {
+    "no_payrolls": "There is no payroll, send the first one.",
+    "download": "Download",
+    "delete": "Delete"
+  },
   "register": {
     "accept": "I accept Payroll's {0}",
     "age": "Age",
@@ -41,10 +55,9 @@
     "submit": "Submit",
     "TOS": "Terms of Service."
   },
-  "account": {
-    "welcome": "Welcome to the settings",
-    "change_name": "Change Name",
-    "change_email": "Change Email",
-    "change_password": "Change Password"
+  "uploadPayroll": {
+    "new_payroll": "New payroll",
+    "select_payroll": "Select payroll",
+    "upload_payroll": "Upload payroll"
   }
 }

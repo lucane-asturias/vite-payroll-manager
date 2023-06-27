@@ -1,10 +1,16 @@
 {
+  "account": {
+    "welcome": "Bem vindo aos ajustes",
+    "change_name": "Mudar nome",
+    "change_email": "Mudar email",
+    "change_password": "Mudar senha"
+  },
   "auth": {
     "already_registered": "Já se cadastrou?",
     "create_account": "Faça o login",
-    "instead": "em vez disso!",
+    "instead": "em vez!",
     "login": "Entrar em minha conta",
-    "no_account": "Ainda não tem uma conta?",
+    "no_account": "Não está cadastrado?",
     "register": "Crie uma conta",
     "welcome": "Bem-vindo!"
   },
@@ -24,8 +30,16 @@
   "navbar": {
     "hello": "Olá",
     "logout": "Logout",
-    "payrolls": "Folhas de pagamento",
+    "payrolls": "Holerites",
     "select_language": "Selecione o idioma"
+  },
+  "payrolls": {
+    "my_payrolls": "Minhas holerites"
+  },
+  "payrollList": {
+    "no_payrolls": "Não há nenhuma holerite, envie a primeira.",
+    "download": "Baixar",
+    "delete": "Remover"
   },
   "register": {
     "accept": "Eu aceito {0}",
@@ -41,10 +55,9 @@
     "submit": "Registrar",
     "TOS": "termos de serviço."
   },
-  "account": {
-    "welcome": "Bem vindo aos ajustes",
-    "change_name": "Mudar nome",
-    "change_email": "Mudar email",
-    "change_password": "Mudar senha"
+  "uploadPayroll": {
+    "new_payroll": "Nova holerite",
+    "select_payroll": "Selecionar holerite",
+    "upload_payroll": "Enviar holerite"
   }
 }

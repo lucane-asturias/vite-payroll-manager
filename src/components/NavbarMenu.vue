@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-black-shade">
+  <header class="bg-black-shade sticky top-0">
     <nav class="menu mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     
       <div class="flex flex-1">
@@ -37,7 +37,7 @@
         </template>
 
         <select @click.prevent="changeLocale"
-          class="fa appearance-none text-sm sm:text-sm w-12 sm:w-12 lg:h-full bg-gray-200 border border-gray-200 text-gray-700 
+          class="fa appearance-none text-sm sm:text-base w-12 sm:w-12 lg:h-full bg-gray-200 border border-gray-200 text-gray-700 
             py-3 sm:py-2 px-3.5 ml-7 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 font-bold tracking-normal lg:tracking-widest" 
         >
           <option hidden selected value="#" aria-hidden="true">&#xf57d;</option>
@@ -57,8 +57,12 @@
 
 <script setup>
   import { computed } from 'vue'
+  import { useI18n } from 'vue-i18n'
+  import { setLocale } from '@vee-validate/i18n'
   import { useAuthStore } from '@/modules/auth/store/authStore'
   import { auth } from '@/utils/firebase'
+  
+  const { locale } = useI18n({ useScope: 'global' })
 
   const authStore = useAuthStore()
 

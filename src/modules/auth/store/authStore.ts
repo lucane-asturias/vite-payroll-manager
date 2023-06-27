@@ -5,16 +5,20 @@ import { reauthenticate } from '@/utils/firebaseFunctions'
 
 export const useAuthStore = defineStore('authStore', {
   state: () => ({
+    applyBg: true,
     user: undefined,
     isUserLoggedIn: false,
     changeForm: false,
   }),
   actions: {
-    toggleUser() {
-      this.isUserLoggedIn = !this.isUserLoggedIn
+    toggleBg() {
+      this.applyBg = !this.applyBg
     },
     toggleAuth() {
       this.changeForm = !this.changeForm
+    },
+    toggleUser() {
+      this.isUserLoggedIn = !this.isUserLoggedIn
     },
     setUser(user) {
       this.user = user
@@ -50,8 +54,9 @@ export const useAuthStore = defineStore('authStore', {
     initLogin() {
       const user = auth.currentUser // get the curent user connected 
       if (user) { 
-        this.setUser(user)
+        this.toggleBg()
         this.toggleUser()
+        this.setUser(user)
       }
     },
     async updateName(newName) {
@@ -78,6 +83,7 @@ export const useAuthStore = defineStore('authStore', {
       await auth.signOut() // signing user out from firebase
 
       this.toggleUser()
+      this.toggleBg()
     }
   }
 })

@@ -1,8 +1,35 @@
+<script lang="ts" setup>
+  import { computed } from "vue"
+  import { auth, db } from "@/utils/firebase"
+  import { useI18n } from 'vue-i18n'
+  import { DateTime } from "luxon"
+
+  const { locale } = useI18n({ useScope: 'global' })
+
+  interface Props {
+    payrolls?: Array
+    getPayrolls: Function
+  }
+
+  const props = defineProps<Props>()
+    
+  const formatDate = (date) => { 
+    return DateTime.fromISO(date).setLocale(locale.value).toLocaleString(DateTime.DATE_FULL)
+  }
+
+  const deletePayroll = async (id) => {
+    try {
+      await db.collection(auth.currentUser.uid).doc(id).delete()
+      props.getPayrolls()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+</script>
+
 <template>
-  <div class="payroll-list">
-    <p class="payroll-list__not-found" v-if="payrolls?.length === 0">
-      No tienes ninguna nomina, sube la primera.
-    </p>
+  <div class="payroll-list -py-1 px-2 lg:m-5 lg:px-5 border border-gray-200">
 
     <div
       class="payroll-list__payroll"
@@ -11,49 +38,17 @@
     >
       <p>{{ formatDate(payroll.dateString) }}</p>
       <div class="action">
-        <a :href="payroll.payrollUrl" target="_blank" class="ui button positive"
-          >Descargar</a
-        >
+        <a :href="payroll.payrollUrl" target="_blank" class="ui button positive">
+          {{ $t('payrollList.download') }}
+        </a>
         <button class="ui button red" @click="deletePayroll(payroll.id)">
-          Eliminar
+          {{ $t('payrollList.delete') }}
         </button>
       </div>
     </div>
+
   </div>
 </template>
-
-<script>
-import moment from "moment";
-import "moment/locale/es";
-import { auth, db } from "../../utils/firebase";
-
-export default {
-  name: "PayrollList",
-  props: {
-    payrolls: Array,
-    getPayrolls: Function,
-  },
-  setup(props) {
-    const formatDate = (date) => {
-      return moment(date).format("MMMM [del] YYYY");
-    };
-
-    const deletePayroll = async (id) => {
-      try {
-        await db.collection(auth.currentUser.uid).doc(id).delete();
-        props.getPayrolls();
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    return {
-      formatDate,
-      deletePayroll,
-    };
-  },
-};
-</script>
 
 <style lang="scss" scoped>
 .payroll-list {

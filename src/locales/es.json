@@ -1,4 +1,10 @@
 {
+  "account": {
+    "welcome": "Bienvenido a los ajustes",
+    "change_name": "Cambiar nombre",
+    "change_email": "Cambiar email",
+    "change_password": "Cambiar contraseña"
+  },
   "auth": {
     "already_registered": "¿Ya se ha registrado?",
     "create_account": "Inicie la sesión",
@@ -27,6 +33,14 @@
     "payrolls": "Nominas",
     "select_language": "Seleccione su idioma"
   },
+  "payrolls": {
+    "my_payrolls": "Mi nominas"
+  },
+  "payrollList": {
+    "no_payrolls": "No tienes ninguna nomina, sube la primera.",
+    "download": "Descargar",
+    "delete": "Eliminar"
+  },
   "register": {
     "accept": "Acepto las {0}",
     "age": "Edad",
@@ -41,10 +55,9 @@
     "submit": "Registrar",
     "TOS": "condiciones de uso de la música."
   },
-  "account": {
-    "welcome": "Bienvenido a los ajustes",
-    "change_name": "Cambiar nombre",
-    "change_email": "Cambiar email",
-    "change_password": "Cambiar contraseña"
+  "uploadPayroll": {
+    "new_payroll": "Nueva nomina",
+    "select_payroll": "Selecionnar Nomina",
+    "upload_payroll": "Subir nomina"
   }
 }

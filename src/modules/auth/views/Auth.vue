@@ -20,8 +20,8 @@
         <h2 class="tracking-wide">{{ $t('auth.create_account') }}</h2>
         <RegisterForm />
 
-        <h4 class="font-thin">{{ $t('already_registered') }} 
-          <span class="cursor-pointer underline font-bold text-gray-300 hover:text-gray-400" @click="toggleAuth">
+        <h4 class="font-thin">{{ $t('auth.already_registered') }} 
+          <span class="cursor-pointer underline font-bold text-gray-300 hover:text-gray-400 hover:opacity-60" @click="toggleAuth">
             {{ $t('auth.login') }}
           </span> {{ $t('auth.instead') }}
         </h4>
@@ -33,7 +33,7 @@
         <LoginForm />
 
         <h4 class="font-thin">{{ $t('auth.no_account') }}
-          <span class="cursor-pointer underline font-bold text-gray-300 hover:text-gray-400" @click="toggleAuth">
+          <span class="cursor-pointer underline font-bold text-gray-300 hover:text-gray-400 hover:opacity-60" @click="toggleAuth">
             {{ $t('auth.register') }}
           </span> {{ $t('auth.instead') }}
         </h4>
@@ -43,7 +43,7 @@
   </BasicLayout>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 
 .auth {
   height: 100vh;
@@ -51,16 +51,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgb(4, 78, 157);
-  background: linear-gradient(
-    0deg,
-    rgba(4, 78, 157, 1) 0%,
-    rgba(0, 174, 255, 1) 100%
-  );
-}
-
-span:hover {
-  opacity: 0.6;
 }
 
 </style>

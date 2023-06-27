@@ -1,4 +1,10 @@
 {
+  "account": {
+    "welcome": "ようこそ、セッティングへ",
+    "change_name": "名前を変更する",
+    "change_email": "メールを変更する",
+    "change_password": "パスワードを変更する"
+  },
   "auth": {
     "already_registered": "すでに登録されている方は",
     "create_account": "アカウント作成",
@@ -24,8 +30,16 @@
   "navbar": {
     "hello": "どうも",
     "logout": "ログアウト",
-    "payrolls": "ペイロール (給与計算)",
+    "payrolls": "ペイロール (給与明細)",
     "select_language": "言語を選択してください"
+  },
+  "payrolls": {
+    "my_payrolls": "私の給与計算"
+  },
+  "payrollList": {
+    "no_payrolls": "ペイロールはありません、最初の1枚を送信して下さい。",
+    "download": "ダウンロード",
+    "delete": "削除"
   },
   "register": {
     "accept": "ペイロールの{0}",
@@ -41,10 +55,9 @@
     "submit": "登録する",
     "TOS": "利用規約に同意します"
   },
-  "account": {
-    "welcome": "ようこそ、セッティングへ",
-    "change_name": "名前を変更する",
-    "change_email": "メールを変更する",
-    "change_password": "パスワードを変更する"
+  "uploadPayroll": {
+    "new_payroll": "新しいペイロール",
+    "select_payroll": "ペイロールを選択",
+    "upload_payroll": "アップロードペイロール"
   }
 }
