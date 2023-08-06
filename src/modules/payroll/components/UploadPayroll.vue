@@ -8,11 +8,11 @@
 
   const props = defineProps<{ getPayrolls: Function }>()
 
-  const showForm = ref(false)
-  const file = ref(null)
-  const date = ref(null)
-  const loading = ref(false)
-  const error = ref(null)
+  const showForm = ref<boolean>(false)
+  const file = ref<null | File>(null)
+  const date = ref<null | Date>(null)
+  const loading = ref<boolean>(false)
+  const error = ref<string>(null)
 
   const emit = defineEmits(['tempFile'])
 
@@ -24,11 +24,10 @@
       return
     }
 
-    const tempFile = e.target.files[0]
+    const tempFile: File = e.target.files[0]
     error.value = null
 
     if (tempFile.type === 'application/pdf') {
-      console.log(tempFile)
       emit('tempFile', tempFile)
       file.value = tempFile
     } else {
@@ -83,7 +82,7 @@
         dateString: date.value,
       })
 
-      props.getPayrolls()
+      props.getPayrolls() // refetch
     } catch (error) {
       console.log(error)
     }
@@ -93,7 +92,7 @@
     file.value = null
     loading.value = false
     showForm.value = false
-    document.getElementById('file').value = '' // clear the input file
+    document.getElementById('file').value = ''
     
   }
 </script>

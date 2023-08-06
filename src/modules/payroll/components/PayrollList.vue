@@ -38,10 +38,12 @@
     >
       <p>{{ formatDate(payroll.dateString) }}</p>
       <div class="action">
-        <a :href="payroll.payrollUrl" target="_blank" class="ui button positive">
+        <a :href="payroll.payrollUrl" target="_blank" 
+          class="bg-green-600 hover:bg-green-700 text-white hover:text-slate-100 p-3 rounded mr-5">
           {{ $t('payrollList.download') }}
         </a>
-        <button class="ui button red" @click="deletePayroll(payroll.id)">
+        <button @click="deletePayroll(payroll.id)"
+          class="bg-red-600 hover:bg-red-700 text-white hover:text-slate-100 p-3 rounded ">
           {{ $t('payrollList.delete') }}
         </button>
       </div>
@@ -62,6 +64,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 15px 0;
+    padding-top: 7px;
 
     p {
       margin: 0;

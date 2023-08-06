@@ -13,11 +13,11 @@
 <template>
   <div class="account">
     <BasicLayout class="bg-white">
-      <h1 class="text-center">Bienvenido a los ajustes</h1>
+      <h1 class="text-center">Welcome to the settings</h1>
 
       <div class="account__section border rounded mx-5 lg:mx-80">
         <p class="title">
-          Cambiar nombre
+          Change name
           <span v-if="user.displayName">({{ user.displayName }})</span>
         </p>
         <ChangeName />
@@ -25,13 +25,13 @@
 
       <div class="account__section border rounded mx-5 lg:mx-80 my-5">
         <p class="title">
-          Cambiar email <span>({{ user.email }})</span>
+          Change email <span>({{ user.email }})</span>
         </p>
         <ChangeEmail />
       </div>
 
       <div class="account__section border rounded mx-5 lg:mx-80 my-5">
-        <p class="title">Cambiar contraseña</p>
+        <p class="title">Change password</p>
         <ChangePassword />
       </div>
     </BasicLayout>

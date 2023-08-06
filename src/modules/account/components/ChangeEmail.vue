@@ -25,26 +25,26 @@
   <vee-form :validation-schema="changeEmailSchema" @submit="onChangeEmail">
     <!-- Change Email -->
     <div class="mb-3">
-      <label class="inline-block mb-2">Nuevo email</label>
+      <label class="inline-block mb-2">New email</label>
       <vee-field type="text" name="email"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-green-900 rounded"
-        placeholder="Enter nuevo email"
+        placeholder="New email"
       />
       <ErrorMessage class="text-lg text-red-600" name="email" />
     </div>
     <!-- Password -->
     <div class="mb-3">
-      <label for="" class="inline-block-mb-2">Contraseña</label>
+      <label for="" class="inline-block-mb-2">Password</label>
       <vee-field type="password" name="password"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-green-900 rounded"
-        placeholder="Contraseña actual"
+        placeholder="Current password"
       />
       <ErrorMessage class="text-lg text-red-600" name="password" />
     </div>
     <button type="submit" :disabled="change_email_in_submission"
       class="block w-full bg-green-600 hover:bg-green-700 text-white mt-6 py-1.5 px-3 rounded transition">
       <i v-if="change_email_loading" class="fas fa-spinner fa-spin mr-1" /> 
-      Atualizar
+      Update
     </button>
   </vee-form>
 </template>

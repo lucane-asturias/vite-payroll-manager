@@ -24,18 +24,18 @@
   <!-- Change Name -->
   <vee-form :validation-schema="changeNameSchema" @submit="onChangeName">
     <div class="mb-3">
-      <label class="inline-block mb-2">Nuevo nombre</label>
+      <label class="inline-block mb-2">New name</label>
       <vee-field type="text" name="name"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition
           duration-500 focus:outline-none focus:border-green-900 rounded"
-        placeholder="Nombre y apellidos" />
-      <!-- will generate span tag if there is error -->
+        placeholder="Name or nickname" />
+      <!-- will generate span tag if thsere is error -->
       <ErrorMessage class="text-lg text-red-600" name="name" />
     </div>
     <button type="submit" :disabled="change_name_in_submission"
       class="block w-full bg-green-600 hover:bg-green-700 text-white mt-6 py-1.5 px-3 rounded transition">
       <i v-if="change_name_loading" class="fas fa-spinner fa-spin mr-1" />
-      Atualizar
+      Update
     </button>
   </vee-form>
 </template>

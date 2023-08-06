@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
   import { ref, onMounted } from "vue"
   import { auth, db } from "@/utils/firebase"
   import BasicLayout from "@/layouts/BasicLayout.vue"
@@ -6,7 +6,7 @@
   import PayrollList from "../components/PayrollList.vue"
 
   const payrolls = ref(null)
-  const tempFile = ref(null)
+  const tempFile = ref<null | File>(null)
 
   onMounted(() => getPayrolls())
 

@@ -28,7 +28,7 @@
     <div class="mb-3">
       <vee-field type="password" name="password"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-green-900 rounded"
-        placeholder="Contraseña actual"
+        placeholder="Current password"
       />
       <ErrorMessage class="text-red-600" name="password" />
     </div>
@@ -36,7 +36,7 @@
     <div class="mb-3">
       <vee-field type="password" name="newPassword"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-green-900 rounded"
-        placeholder="Nueva contraseña"
+        placeholder="New password"
       />
       <ErrorMessage class="text-red-600" name="newPassword" />
     </div>
@@ -44,14 +44,14 @@
     <div class="mb-3">
       <vee-field type="password" name="newPasswordRepeat"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-green-900 rounded"
-        placeholder="Repite la nueva contraseña"
+        placeholder="Repeat new password"
       />
       <ErrorMessage class="text-red-600" name="newPasswordRepeat" />
     </div>
     <button type="submit" :disabled="change_password_in_submission"
       class="block w-full bg-green-600 hover:bg-green-700 text-white mt-6 py-1.5 px-3 rounded transition">
       <i v-if="change_password_loading" class="fas fa-spinner fa-spin mr-1" /> 
-      Atualizar
+      Update
     </button>
   </vee-form>
 </template>

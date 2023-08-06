@@ -1,3 +1,44 @@
+<script lang="ts" setup>
+  import { computed } from 'vue'
+  import { useI18n } from 'vue-i18n'
+  import { setLocale } from '@vee-validate/i18n'
+  import { useAuthStore } from '@/modules/auth/store/authStore'
+  import { auth } from '@/utils/firebase'
+  
+  const { locale } = useI18n({ useScope: 'global' })
+
+  const authStore = useAuthStore()
+
+  const user = computed(() => authStore.user)
+  const isUserLoggedIn = computed(() => authStore.isUserLoggedIn)
+
+  const logOut = async () => await authStore.signOut()
+
+  const changeLocale = (event: PointerEvent) => {
+    switch (event.target.value) {
+      case 'pt':
+        locale.value = 'pt'
+        setLocale('pt_BR')
+        break;
+      case 'es':
+        locale.value = 'es'
+        setLocale('es')
+        break;
+      case 'ja':
+        locale.value = 'ja'
+        setLocale('ja')
+        break;
+      case 'zh':
+        locale.value = 'zh'
+        setLocale('zh')
+        break;
+      default:
+        locale.value = 'en'
+        setLocale('en')
+    }
+  }
+</script>
+
 <template>
   <header class="bg-black-shade sticky top-0">
     <nav class="menu mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -20,16 +61,16 @@
       <div class="flex flex-1 justify-end">
 
         <template v-if="isUserLoggedIn">
-          <div class="hidden lg:flex text-sm lg:text-lg text-white hover:text-blue-400 mt-1 md:mt-1.5 mr-10 font-semibold leading-6 text-gray-900">
+          <router-link to="/account" class="hidden lg:flex text-sm lg:text-lg text-white hover:text-blue-400 mt-1 md:mt-1.5 mr-10 font-semibold leading-6 text-gray-900">
             {{ $t('navbar.hello') }}, {{ user.displayName || user.email  }}
-          </div>
+          </router-link>
 
           <div class="cursor-pointer hidden lg:flex text-sm lg:text-lg text-white hover:text-red-400 mt-1 md:mt-1.5 font-semibold leading-6 text-gray-900" @click="logOut">
             {{ $t('navbar.logout') }} <span class="pl-1" aria-hidden="true">&rarr;</span>
           </div>
 
             
-          <div class="border border-1 border-red-300 rounded px-3 -py-1 lg:hidden">
+          <div class="px-3 -py-1 lg:hidden">
             <div class="cursor-pointer flex text-sm lg:text-lg text-white hover:text-red-400 -mr-1 sm:-mr-1 mt-3.5 sm:mt-3 h-15 font-semibold leading-6 text-gray-900" @click="logOut">
               <i class="fas fa-sign-out-alt fa-lg" />
             </div>
@@ -54,43 +95,6 @@
     </nav>
   </header>
 </template>
-
-<script setup>
-  import { computed } from 'vue'
-  import { useI18n } from 'vue-i18n'
-  import { setLocale } from '@vee-validate/i18n'
-  import { useAuthStore } from '@/modules/auth/store/authStore'
-  import { auth } from '@/utils/firebase'
-  
-  const { locale } = useI18n({ useScope: 'global' })
-
-  const authStore = useAuthStore()
-
-  const user = computed(() => authStore.user)
-  const isUserLoggedIn = computed(() => authStore.isUserLoggedIn)
-
-  const logOut = async () => await authStore.signOut()
-
-  const changeLocale = (event) => {
-    if (event.target.value === 'pt') {
-      locale.value = 'pt'
-      setLocale('pt_BR')
-    } else if (event.target.value === 'es') {
-      locale.value = 'es'
-      setLocale('es')
-    } else if (event.target.value === 'ja') {
-      locale.value = 'ja'
-      setLocale('ja')
-    } else if (event.target.value === 'zh') {
-      locale.value = 'zh'
-      setLocale('zh')
-    } else {
-      locale.value = 'en'
-      setLocale('en')
-    }
-  }
-
-</script>
 
 <style scoped lang="scss">
   .menu {
