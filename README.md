@@ -28,7 +28,6 @@ It uses firebase as the backend server for storage (to upload a payroll pdf), da
 - Firebase
 - VeeValidate (form validation)
 - Vue-i18n
-- Vitest (unit testing)
 
 ## How To Use
 
